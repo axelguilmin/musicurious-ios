@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+    <entity name="Playlist" representedClassName=".Playlist" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Song" inverseName="playlist" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Song" representedClassName=".Song" syncable="YES">
+        <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryCode" attributeType="String" minValueString="2" maxValueString="3" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="wikipediaLocalization" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wikipediaPage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Decimal" minValueString="0" maxValueString="2050" syncable="YES"/>
+        <attribute name="youtubeId" optional="YES" attributeType="String" minValueString="11" maxValueString="11" syncable="YES"/>
+        <relationship name="playlist" maxCount="1" deletionRule="Nullify" destinationEntity="Playlist" inverseName="songs" inverseEntity="Playlist" syncable="YES"/>
+        <fetchedProperty name="country" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Song"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="Playlist" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Song" positionX="-54" positionY="-9" width="128" height="209"/>
+    </elements>
+</model>

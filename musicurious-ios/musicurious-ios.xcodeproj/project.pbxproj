@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		772963E81BF345D2002A9889 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772963E71BF345D2002A9889 /* String.swift */; };
+		7735061B1BB1FB290074B258 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735061A1BB1FB290074B258 /* CountryViewController.swift */; };
+		7735061D1BB2103E0074B258 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735061C1BB2103E0074B258 /* MKMapView.swift */; };
+		773ACEEC1BDD651E0066DD48 /* Playlist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773ACEEA1BDD651E0066DD48 /* Playlist+CoreDataProperties.swift */; };
+		773ACEED1BDD651E0066DD48 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773ACEEB1BDD651E0066DD48 /* Song+CoreDataProperties.swift */; };
+		773ACEEF1BDD8D6E0066DD48 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773ACEEE1BDD8D6E0066DD48 /* NSNumber.swift */; };
+		7761A21E1BBEA09B005BFA51 /* NewSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761A21D1BBEA09B005BFA51 /* NewSongViewController.swift */; };
+		776902701B681977002357FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769026F1B681977002357FF /* AppDelegate.swift */; };
+		776902721B681977002357FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776902711B681977002357FF /* ViewController.swift */; };
+		776902751B681977002357FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776902731B681977002357FF /* Main.storyboard */; };
+		776902771B681977002357FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776902761B681977002357FF /* Images.xcassets */; };
+		7769027A1B681977002357FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 776902781B681977002357FF /* LaunchScreen.xib */; };
+		776902901B681FA2002357FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769028F1B681FA2002357FF /* MapViewController.swift */; };
+		777095B81BDECBF800D78D79 /* NSSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777095B71BDECBF800D78D79 /* NSSet.swift */; };
+		77C24A851BB9C10900F586B6 /* MKCoordinateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C24A841BB9C10900F586B6 /* MKCoordinateRegion.swift */; };
+		77E21D3D1BAFE485001B36ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E21D3C1BAFE485001B36ED /* MapKit.framework */; };
+		77E21D451BAFEF9D001B36ED /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E21D441BAFEF9D001B36ED /* SongViewController.swift */; };
+		77E21D551BB00D60001B36ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77E21D4F1BB00D60001B36ED /* Info.plist */; };
+		77E21D561BB00D60001B36ED /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E21D501BB00D60001B36ED /* YouTubePlayer.swift */; };
+		77E21D571BB00D60001B36ED /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 77E21D511BB00D60001B36ED /* YTPlayer.html */; };
+		77E21D5D1BB01102001B36ED /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E21D5A1BB00D61001B36ED /* YouTubePlayer.framework */; };
+		77E21D611BB01325001B36ED /* YouTubePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77E21D5A1BB00D61001B36ED /* YouTubePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		77E21D671BB01E27001B36ED /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E21D661BB01E27001B36ED /* CoreDataStackManager.swift */; };
+		77E21D691BB034FD001B36ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E21D681BB034FD001B36ED /* CoreData.framework */; };
+		77E21D6C1BB03548001B36ED /* Musicurious.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77E21D6A1BB03548001B36ED /* Musicurious.xcdatamodeld */; };
+		77E21D741BB0379D001B36ED /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E21D701BB0379D001B36ED /* Playlist.swift */; };
+		77E21D761BB0379D001B36ED /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E21D721BB0379D001B36ED /* Song.swift */; };
+		77FEAA961BC6332800FB2A4A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FEAA951BC6332800FB2A4A /* API.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		776902801B681977002357FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 776902621B681977002357FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 776902691B681977002357FF;
+			remoteInfo = "musicurious-ios";
+		};
+		77E21D591BB00D61001B36ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77E21D521BB00D60001B36ED /* YouTubePlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 502AE85F1A475FD500306AD1;
+			remoteInfo = YouTubePlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		77E21D641BB01325001B36ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77E21D611BB01325001B36ED /* YouTubePlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		772963E71BF345D2002A9889 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		7735061A1BB1FB290074B258 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		7735061C1BB2103E0074B258 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
+		773ACEEA1BDD651E0066DD48 /* Playlist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Playlist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		773ACEEB1BDD651E0066DD48 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		773ACEEE1BDD8D6E0066DD48 /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
+		775E68DE1BB03E480098AFAB /* musicurious-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "musicurious-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7761A21D1BBEA09B005BFA51 /* NewSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSongViewController.swift; sourceTree = "<group>"; };
+		7769026E1B681977002357FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7769026F1B681977002357FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		776902711B681977002357FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "musicurious-ios/ViewController.swift"; sourceTree = "<group>"; };
+		776902741B681977002357FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		776902761B681977002357FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		776902791B681977002357FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7769028F1B681FA2002357FF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "musicurious-ios/MapViewController.swift"; sourceTree = "<group>"; };
+		777095B71BDECBF800D78D79 /* NSSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSet.swift; sourceTree = "<group>"; };
+		77C24A841BB9C10900F586B6 /* MKCoordinateRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegion.swift; sourceTree = "<group>"; };
+		77E21D3C1BAFE485001B36ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		77E21D441BAFEF9D001B36ED /* SongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
+		77E21D4F1BB00D60001B36ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E21D501BB00D60001B36ED /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
+		77E21D511BB00D60001B36ED /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
+		77E21D521BB00D60001B36ED /* YouTubePlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = YouTubePlayer.xcodeproj; sourceTree = "<group>"; };
+		77E21D651BB0136C001B36ED /* Musicurious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicurious.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E21D661BB01E27001B36ED /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		77E21D681BB034FD001B36ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		77E21D6B1BB03548001B36ED /* Musicurious.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Musicurious.xcdatamodel; sourceTree = "<group>"; };
+		77E21D701BB0379D001B36ED /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		77E21D721BB0379D001B36ED /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		77FEAA951BC6332800FB2A4A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		776902671B681977002357FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E21D691BB034FD001B36ED /* CoreData.framework in Frameworks */,
+				77E21D5D1BB01102001B36ED /* YouTubePlayer.framework in Frameworks */,
+				77E21D3D1BAFE485001B36ED /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7769027C1B681977002357FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		776902611B681977002357FF = {
+			isa = PBXGroup;
+			children = (
+				7769026C1B681977002357FF /* musicurious-ios */,
+				77E21D651BB0136C001B36ED /* Musicurious.app */,
+				775E68DE1BB03E480098AFAB /* musicurious-iosTests.xctest */,
+			);
+			sourceTree = "<group>";
+		};
+		7769026C1B681977002357FF /* musicurious-ios */ = {
+			isa = PBXGroup;
+			children = (
+				7769026F1B681977002357FF /* AppDelegate.swift */,
+				77E21D3F1BAFEE84001B36ED /* Model */,
+				77E21D401BAFEE94001B36ED /* View */,
+				77E21D411BAFEE99001B36ED /* Controller */,
+				77E21D461BB00B14001B36ED /* Extension */,
+				77E21D431BAFEF06001B36ED /* Ressources */,
+			);
+			path = "musicurious-ios";
+			sourceTree = "<group>";
+		};
+		77E21D3E1BAFEE76001B36ED /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				77E21D681BB034FD001B36ED /* CoreData.framework */,
+				77E21D3C1BAFE485001B36ED /* MapKit.framework */,
+				77E21D4D1BB00D60001B36ED /* YouTubePlayer */,
+			);
+			name = Framework;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		77E21D3F1BAFEE84001B36ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77E21D421BAFEEC0001B36ED /* API */,
+				77E21D771BB037B0001B36ED /* CoreData */,
+				77E21D701BB0379D001B36ED /* Playlist.swift */,
+				77E21D721BB0379D001B36ED /* Song.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		77E21D401BAFEE94001B36ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				776902731B681977002357FF /* Main.storyboard */,
+				776902781B681977002357FF /* LaunchScreen.xib */,
+			);
+			name = View;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		77E21D411BAFEE99001B36ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				776902711B681977002357FF /* ViewController.swift */,
+				7769028F1B681FA2002357FF /* MapViewController.swift */,
+				7735061A1BB1FB290074B258 /* CountryViewController.swift */,
+				77E21D441BAFEF9D001B36ED /* SongViewController.swift */,
+				7761A21D1BBEA09B005BFA51 /* NewSongViewController.swift */,
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		77E21D421BAFEEC0001B36ED /* API */ = {
+			isa = PBXGroup;
+			children = (
+				77FEAA951BC6332800FB2A4A /* API.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		77E21D431BAFEF06001B36ED /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				77E21D3E1BAFEE76001B36ED /* Framework */,
+				776902761B681977002357FF /* Images.xcassets */,
+				7769026E1B681977002357FF /* Info.plist */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		77E21D461BB00B14001B36ED /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				77C24A841BB9C10900F586B6 /* MKCoordinateRegion.swift */,
+				7735061C1BB2103E0074B258 /* MKMapView.swift */,
+				773ACEEE1BDD8D6E0066DD48 /* NSNumber.swift */,
+				777095B71BDECBF800D78D79 /* NSSet.swift */,
+				772963E71BF345D2002A9889 /* String.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		77E21D4D1BB00D60001B36ED /* YouTubePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				77E21D4E1BB00D60001B36ED /* YouTubePlayer */,
+				77E21D521BB00D60001B36ED /* YouTubePlayer.xcodeproj */,
+			);
+			path = YouTubePlayer;
+			sourceTree = "<group>";
+		};
+		77E21D4E1BB00D60001B36ED /* YouTubePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				77E21D4F1BB00D60001B36ED /* Info.plist */,
+				77E21D501BB00D60001B36ED /* YouTubePlayer.swift */,
+				77E21D511BB00D60001B36ED /* YTPlayer.html */,
+			);
+			path = YouTubePlayer;
+			sourceTree = "<group>";
+		};
+		77E21D531BB00D60001B36ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77E21D5A1BB00D61001B36ED /* YouTubePlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77E21D771BB037B0001B36ED /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				773ACEEA1BDD651E0066DD48 /* Playlist+CoreDataProperties.swift */,
+				773ACEEB1BDD651E0066DD48 /* Song+CoreDataProperties.swift */,
+				77E21D661BB01E27001B36ED /* CoreDataStackManager.swift */,
+				77E21D6A1BB03548001B36ED /* Musicurious.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		776902691B681977002357FF /* musicurious-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 776902891B681978002357FF /* Build configuration list for PBXNativeTarget "musicurious-ios" */;
+			buildPhases = (
+				776902661B681977002357FF /* Sources */,
+				776902671B681977002357FF /* Frameworks */,
+				776902681B681977002357FF /* Resources */,
+				77E21D641BB01325001B36ED /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "musicurious-ios";
+			productName = "musicurious-ios";
+			productReference = 77E21D651BB0136C001B36ED /* Musicurious.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7769027E1B681977002357FF /* musicurious-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7769028C1B681978002357FF /* Build configuration list for PBXNativeTarget "musicurious-iosTests" */;
+			buildPhases = (
+				7769027B1B681977002357FF /* Sources */,
+				7769027C1B681977002357FF /* Frameworks */,
+				7769027D1B681977002357FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				776902811B681977002357FF /* PBXTargetDependency */,
+			);
+			name = "musicurious-iosTests";
+			productName = "musicurious-iosTests";
+			productReference = 775E68DE1BB03E480098AFAB /* musicurious-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		776902621B681977002357FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Axel Guilmin";
+				TargetAttributes = {
+					776902691B681977002357FF = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					7769027E1B681977002357FF = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 776902691B681977002357FF;
+					};
+				};
+			};
+			buildConfigurationList = 776902651B681977002357FF /* Build configuration list for PBXProject "musicurious-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 776902611B681977002357FF;
+			productRefGroup = 776902611B681977002357FF;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 77E21D531BB00D60001B36ED /* Products */;
+					ProjectRef = 77E21D521BB00D60001B36ED /* YouTubePlayer.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				776902691B681977002357FF /* musicurious-ios */,
+				7769027E1B681977002357FF /* musicurious-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		77E21D5A1BB00D61001B36ED /* YouTubePlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YouTubePlayer.framework;
+			remoteRef = 77E21D591BB00D61001B36ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		776902681B681977002357FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E21D551BB00D60001B36ED /* Info.plist in Resources */,
+				776902751B681977002357FF /* Main.storyboard in Resources */,
+				77E21D571BB00D60001B36ED /* YTPlayer.html in Resources */,
+				7769027A1B681977002357FF /* LaunchScreen.xib in Resources */,
+				776902771B681977002357FF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7769027D1B681977002357FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		776902661B681977002357FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				773ACEED1BDD651E0066DD48 /* Song+CoreDataProperties.swift in Sources */,
+				773ACEEF1BDD8D6E0066DD48 /* NSNumber.swift in Sources */,
+				776902901B681FA2002357FF /* MapViewController.swift in Sources */,
+				77C24A851BB9C10900F586B6 /* MKCoordinateRegion.swift in Sources */,
+				77E21D561BB00D60001B36ED /* YouTubePlayer.swift in Sources */,
+				77FEAA961BC6332800FB2A4A /* API.swift in Sources */,
+				77E21D741BB0379D001B36ED /* Playlist.swift in Sources */,
+				77E21D451BAFEF9D001B36ED /* SongViewController.swift in Sources */,
+				7761A21E1BBEA09B005BFA51 /* NewSongViewController.swift in Sources */,
+				77E21D761BB0379D001B36ED /* Song.swift in Sources */,
+				777095B81BDECBF800D78D79 /* NSSet.swift in Sources */,
+				7735061D1BB2103E0074B258 /* MKMapView.swift in Sources */,
+				77E21D6C1BB03548001B36ED /* Musicurious.xcdatamodeld in Sources */,
+				776902721B681977002357FF /* ViewController.swift in Sources */,
+				7735061B1BB1FB290074B258 /* CountryViewController.swift in Sources */,
+				773ACEEC1BDD651E0066DD48 /* Playlist+CoreDataProperties.swift in Sources */,
+				772963E81BF345D2002A9889 /* String.swift in Sources */,
+				776902701B681977002357FF /* AppDelegate.swift in Sources */,
+				77E21D671BB01E27001B36ED /* CoreDataStackManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7769027B1B681977002357FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		776902811B681977002357FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 776902691B681977002357FF /* musicurious-ios */;
+			targetProxy = 776902801B681977002357FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		776902731B681977002357FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				776902741B681977002357FF /* Base */,
+			);
+			name = Main.storyboard;
+			path = "musicurious-ios";
+			sourceTree = "<group>";
+		};
+		776902781B681977002357FF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				776902791B681977002357FF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = "musicurious-ios";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		776902871B681978002357FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		776902881B681978002357FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7769028A1B681978002357FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "musicurious-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.axelguilmin.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Musicurious;
+			};
+			name = Debug;
+		};
+		7769028B1B681978002357FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "musicurious-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.axelguilmin.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Musicurious;
+			};
+			name = Release;
+		};
+		7769028D1B681978002357FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "musicurious-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/musicurious-ios.app/musicurious-ios";
+			};
+			name = Debug;
+		};
+		7769028E1B681978002357FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "musicurious-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/musicurious-ios.app/musicurious-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		776902651B681977002357FF /* Build configuration list for PBXProject "musicurious-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				776902871B681978002357FF /* Debug */,
+				776902881B681978002357FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		776902891B681978002357FF /* Build configuration list for PBXNativeTarget "musicurious-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7769028A1B681978002357FF /* Debug */,
+				7769028B1B681978002357FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7769028C1B681978002357FF /* Build configuration list for PBXNativeTarget "musicurious-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7769028D1B681978002357FF /* Debug */,
+				7769028E1B681978002357FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		77E21D6A1BB03548001B36ED /* Musicurious.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				77E21D6B1BB03548001B36ED /* Musicurious.xcdatamodel */,
+			);
+			currentVersion = 77E21D6B1BB03548001B36ED /* Musicurious.xcdatamodel */;
+			path = Musicurious.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 776902621B681977002357FF /* Project object */;
+}

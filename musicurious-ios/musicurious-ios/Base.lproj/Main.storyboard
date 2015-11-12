@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kPJ-qi-bgR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="vuV-rW-uxQ">
+            <objects>
+                <viewController title="Map" id="J3t-dW-qme" customClass="MapViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0jR-9Z-7SY"/>
+                        <viewControllerLayoutGuide type="bottom" id="gan-ow-4r0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v6M-Ce-5Vu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" zoomEnabled="NO" rotateEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYe-QH-xg6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neD-eT-YzC">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rOt-RS-JYx"/>
+                                    <barButtonItem title="I feel lucky" id="GKF-hv-02G">
+                                        <connections>
+                                            <action selector="randomCountry:" destination="J3t-dW-qme" id="9r7-8i-uZh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XOQ-8d-RPh"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="neD-eT-YzC" secondAttribute="trailing" id="AG8-Mq-h9u"/>
+                            <constraint firstItem="FYe-QH-xg6" firstAttribute="leading" secondItem="v6M-Ce-5Vu" secondAttribute="leading" id="KLc-sa-5jR"/>
+                            <constraint firstItem="neD-eT-YzC" firstAttribute="leading" secondItem="v6M-Ce-5Vu" secondAttribute="leading" id="KVH-O9-bhB"/>
+                            <constraint firstItem="gan-ow-4r0" firstAttribute="top" secondItem="FYe-QH-xg6" secondAttribute="bottom" id="aSw-rr-xFN"/>
+                            <constraint firstItem="gan-ow-4r0" firstAttribute="top" secondItem="neD-eT-YzC" secondAttribute="bottom" id="gYH-Va-1DS"/>
+                            <constraint firstAttribute="trailing" secondItem="FYe-QH-xg6" secondAttribute="trailing" id="q9n-fw-np4"/>
+                            <constraint firstItem="FYe-QH-xg6" firstAttribute="top" secondItem="v6M-Ce-5Vu" secondAttribute="top" id="y1h-xp-8hu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Playlist name" id="RZl-IF-YIj">
+                        <barButtonItem key="backBarButtonItem" title="Map" id="g3t-BP-hzc"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="FYe-QH-xg6" id="3KJ-jI-jR1"/>
+                        <segue destination="z8n-Nf-to0" kind="show" identifier="showSong" id="HHj-GT-ORL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ltq-gz-fiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="696"/>
+        </scene>
+        <!--NewSongViewController-->
+        <scene sceneID="Si5-as-WNK">
+            <objects>
+                <viewController storyboardIdentifier="NewSongViewController" title="NewSongViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8l2-ML-Jte" customClass="NewSongViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ag3-06-pMV"/>
+                        <viewControllerLayoutGuide type="bottom" id="1f1-qr-Xr3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j5B-3w-fLQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jX5-Kh-BDv">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="uiN-fY-Feo">
+                                        <connections>
+                                            <action selector="cancel" destination="8l2-ML-Jte" id="DjJ-yc-BAr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FPk-Hw-qpC"/>
+                                    <barButtonItem systemItem="done" id="wgO-DH-ODC">
+                                        <connections>
+                                            <action selector="done" destination="8l2-ML-Jte" id="pzw-H7-Vtu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Youtube link" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x7j-KE-XLS">
+                                <rect key="frame" x="20" y="150" width="560" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C43-Ps-qnK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="8l2-ML-Jte" id="pob-B4-3LG"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Artist" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MAR-dH-5Gd">
+                                <rect key="frame" x="270" y="92" width="242" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MEg-cI-aBD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="8l2-ML-Jte" id="OiH-1P-tVl"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x56-la-akv">
+                                <rect key="frame" x="20" y="92" width="242" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5mZ-IN-g2B"/>
+                                    <constraint firstAttribute="width" priority="750" constant="500" id="h9K-Pv-7oE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="h9K-Pv-7oE"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="8l2-ML-Jte" id="rtw-tj-xYP"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQH-Se-vO6">
+                                <rect key="frame" x="20" y="36" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vS4-Sx-GYt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34g-1G-G9a" customClass="YouTubePlayerView" customModule="musicurious_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="216" width="600" height="340"/>
+                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="qiQ-Mg-3AN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qiQ-Mg-3AN"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ff1-O3-8uu">
+                                <rect key="frame" x="520" y="92" width="60" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="dKs-Xv-IpM"/>
+                                    <constraint firstAttribute="height" constant="50" id="p8e-TS-zPB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="8l2-ML-Jte" id="T1n-OO-jwv"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.5725490196078431" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MAR-dH-5Gd" firstAttribute="width" secondItem="x56-la-akv" secondAttribute="width" id="4FB-Ss-nEL"/>
+                            <constraint firstItem="1f1-qr-Xr3" firstAttribute="top" secondItem="jX5-Kh-BDv" secondAttribute="bottom" id="4ld-PZ-RDU"/>
+                            <constraint firstItem="x56-la-akv" firstAttribute="leading" secondItem="j5B-3w-fLQ" secondAttribute="leadingMargin" id="8gU-AT-A0q"/>
+                            <constraint firstItem="jX5-Kh-BDv" firstAttribute="leading" secondItem="j5B-3w-fLQ" secondAttribute="leading" id="CVU-fX-mBp"/>
+                            <constraint firstItem="34g-1G-G9a" firstAttribute="top" secondItem="x7j-KE-XLS" secondAttribute="bottom" constant="16" id="D0x-RX-RgV"/>
+                            <constraint firstItem="x7j-KE-XLS" firstAttribute="trailing" secondItem="j5B-3w-fLQ" secondAttribute="trailingMargin" id="IDV-89-dLB"/>
+                            <constraint firstItem="x56-la-akv" firstAttribute="top" secondItem="lQH-Se-vO6" secondAttribute="bottom" constant="16" id="IOs-Ib-xrc"/>
+                            <constraint firstItem="lQH-Se-vO6" firstAttribute="leading" secondItem="j5B-3w-fLQ" secondAttribute="leadingMargin" id="NTo-iI-Q5v"/>
+                            <constraint firstItem="lQH-Se-vO6" firstAttribute="top" secondItem="ag3-06-pMV" secondAttribute="bottom" constant="16" id="OcT-yz-984"/>
+                            <constraint firstItem="MAR-dH-5Gd" firstAttribute="leading" secondItem="x56-la-akv" secondAttribute="trailing" constant="8" id="PSr-V9-rU2"/>
+                            <constraint firstItem="x7j-KE-XLS" firstAttribute="top" secondItem="Ff1-O3-8uu" secondAttribute="bottom" constant="8" id="Suf-Sy-IQq"/>
+                            <constraint firstItem="Ff1-O3-8uu" firstAttribute="leading" secondItem="MAR-dH-5Gd" secondAttribute="trailing" constant="8" id="Yn2-5G-Ca2"/>
+                            <constraint firstItem="Ff1-O3-8uu" firstAttribute="top" secondItem="lQH-Se-vO6" secondAttribute="bottom" constant="16" id="bbr-vT-W3e"/>
+                            <constraint firstItem="jX5-Kh-BDv" firstAttribute="top" secondItem="34g-1G-G9a" secondAttribute="bottom" id="br1-Kt-Anb"/>
+                            <constraint firstItem="MAR-dH-5Gd" firstAttribute="top" secondItem="lQH-Se-vO6" secondAttribute="bottom" constant="16" id="dCc-eg-gkF"/>
+                            <constraint firstAttribute="trailing" secondItem="jX5-Kh-BDv" secondAttribute="trailing" id="faJ-m9-JX6"/>
+                            <constraint firstItem="34g-1G-G9a" firstAttribute="leading" secondItem="j5B-3w-fLQ" secondAttribute="leading" id="fxH-vG-RtI"/>
+                            <constraint firstAttribute="trailing" secondItem="34g-1G-G9a" secondAttribute="trailing" id="p6m-8S-Vsy"/>
+                            <constraint firstItem="lQH-Se-vO6" firstAttribute="trailing" secondItem="j5B-3w-fLQ" secondAttribute="trailingMargin" id="tFD-3e-BuF"/>
+                            <constraint firstItem="Ff1-O3-8uu" firstAttribute="trailing" secondItem="j5B-3w-fLQ" secondAttribute="trailingMargin" id="u8Q-9K-0i2"/>
+                            <constraint firstItem="x7j-KE-XLS" firstAttribute="leading" secondItem="j5B-3w-fLQ" secondAttribute="leadingMargin" id="wN5-Px-Gl5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="artist" destination="MAR-dH-5Gd" id="tMi-bi-He7"/>
+                        <outlet property="playerView" destination="34g-1G-G9a" id="dy2-Ut-1nz"/>
+                        <outlet property="songTitle" destination="x56-la-akv" id="H8p-HO-vOi"/>
+                        <outlet property="titleLabel" destination="lQH-Se-vO6" id="mit-ZM-iEv"/>
+                        <outlet property="year" destination="Ff1-O3-8uu" id="gX1-Qs-MC1"/>
+                        <outlet property="youtubeLink" destination="x7j-KE-XLS" id="AMQ-Fo-bzy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKa-Jt-vYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="1447"/>
+        </scene>
+        <!--Song-->
+        <scene sceneID="ETP-CQ-HgU">
+            <objects>
+                <viewController storyboardIdentifier="SongViewController" title="Song" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tbJ-i8-28N" customClass="SongViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xVG-4Y-Kza"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZQ-EX-MuB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D6V-WY-AW0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title - Artist (year)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMV-a4-9Cd">
+                                <rect key="frame" x="20" y="64" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-7B-XEG" customClass="YouTubePlayerView" customModule="musicurious_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UMV-a4-9Cd" secondAttribute="trailing" constant="20" id="9pi-kA-hEi"/>
+                            <constraint firstItem="8Dc-7B-XEG" firstAttribute="top" secondItem="xVG-4Y-Kza" secondAttribute="bottom" constant="30" id="DH7-Th-rak"/>
+                            <constraint firstItem="UMV-a4-9Cd" firstAttribute="top" secondItem="xVG-4Y-Kza" secondAttribute="bottom" id="Efr-I5-K4S"/>
+                            <constraint firstAttribute="trailing" secondItem="8Dc-7B-XEG" secondAttribute="trailing" id="TQe-B9-ClO"/>
+                            <constraint firstItem="gZQ-EX-MuB" firstAttribute="top" secondItem="8Dc-7B-XEG" secondAttribute="bottom" id="UKz-wt-177"/>
+                            <constraint firstItem="8Dc-7B-XEG" firstAttribute="leading" secondItem="D6V-WY-AW0" secondAttribute="leading" id="ViC-IP-r5U"/>
+                            <constraint firstItem="UMV-a4-9Cd" firstAttribute="leading" secondItem="D6V-WY-AW0" secondAttribute="leading" constant="20" id="n9g-Yu-GNr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Country name" id="yZq-GY-c3x"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playerView" destination="8Dc-7B-XEG" id="8yM-Vr-VGt"/>
+                        <outlet property="titleLabel" destination="UMV-a4-9Cd" id="Nwa-pp-kDo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWB-3q-LUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3076" y="696"/>
+        </scene>
+        <!--Country name-->
+        <scene sceneID="uqe-Kc-kNf">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="z8n-Nf-to0" customClass="CountryViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Country name" id="ovf-Zj-2X1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dl8-Ka-WOY">
+                            <connections>
+                                <action selector="newSongAction" destination="z8n-Nf-to0" id="LEs-on-Zey"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9d-rm-TE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2394" y="696"/>
+        </scene>
+        <!--Musicurious-->
+        <scene sceneID="3Ck-ee-Ksx">
+            <objects>
+                <navigationController title="Musicurious" automaticallyAdjustsScrollViewInsets="NO" id="kPJ-qi-bgR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dtr-oE-aL4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J3t-dW-qme" kind="relationship" relationship="rootViewController" id="OUg-mW-X3Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0G1-Cr-wIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848" y="696"/>
+        </scene>
+    </scenes>
+</document>
