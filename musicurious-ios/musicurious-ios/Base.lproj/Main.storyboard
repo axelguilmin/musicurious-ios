@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kPJ-qi-bgR">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Map-->
         <scene sceneID="vuV-rW-uxQ">
             <objects>
-                <viewController title="Map" id="J3t-dW-qme" customClass="MapViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="J3t-dW-qme" customClass="MapViewController" customModule="Musicurious" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jR-9Z-7SY"/>
                         <viewControllerLayoutGuide type="bottom" id="gan-ow-4r0"/>
@@ -47,8 +47,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Playlist name" id="RZl-IF-YIj">
                         <barButtonItem key="backBarButtonItem" title="Map" id="g3t-BP-hzc"/>
+                        <barButtonItem key="rightBarButtonItem" id="QEz-a7-dCE" userLabel="Activity Indicator" customClass="BarActivityIndicatorItem" customModule="Musicurious" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="QEz-a7-dCE" id="31j-5x-pdI"/>
                         <outlet property="mapView" destination="FYe-QH-xg6" id="3KJ-jI-jR1"/>
                         <segue destination="z8n-Nf-to0" kind="show" identifier="showSong" id="HHj-GT-ORL"/>
                     </connections>
@@ -60,7 +62,7 @@
         <!--NewSongViewController-->
         <scene sceneID="Si5-as-WNK">
             <objects>
-                <viewController storyboardIdentifier="NewSongViewController" title="NewSongViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8l2-ML-Jte" customClass="NewSongViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewSongViewController" title="NewSongViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8l2-ML-Jte" customClass="NewSongViewController" customModule="Musicurious" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ag3-06-pMV"/>
                         <viewControllerLayoutGuide type="bottom" id="1f1-qr-Xr3"/>
@@ -149,7 +151,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34g-1G-G9a" customClass="YouTubePlayerView" customModule="musicurious_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34g-1G-G9a" customClass="YouTubePlayerView" customModule="Musicurious" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="216" width="600" height="340"/>
                                 <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -221,7 +223,7 @@
         <!--Song-->
         <scene sceneID="ETP-CQ-HgU">
             <objects>
-                <viewController storyboardIdentifier="SongViewController" title="Song" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tbJ-i8-28N" customClass="SongViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SongViewController" title="Song" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tbJ-i8-28N" customClass="SongViewController" customModule="Musicurious" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xVG-4Y-Kza"/>
                         <viewControllerLayoutGuide type="bottom" id="gZQ-EX-MuB"/>
@@ -236,7 +238,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-7B-XEG" customClass="YouTubePlayerView" customModule="musicurious_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-7B-XEG" customClass="YouTubePlayerView" customModule="Musicurious" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -268,16 +270,22 @@
         <!--Country name-->
         <scene sceneID="uqe-Kc-kNf">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="z8n-Nf-to0" customClass="CountryViewController" customModule="musicurious_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="z8n-Nf-to0" customClass="CountryViewController" customModule="Musicurious" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Country name" id="ovf-Zj-2X1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dl8-Ka-WOY">
-                            <connections>
-                                <action selector="newSongAction" destination="z8n-Nf-to0" id="LEs-on-Zey"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="dl8-Ka-WOY">
+                                <connections>
+                                    <action selector="newSongAction" destination="z8n-Nf-to0" id="LEs-on-Zey"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem id="fFL-34-Anp" customClass="BarActivityIndicatorItem" customModule="Musicurious" customModuleProvider="target"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="fFL-34-Anp" id="e58-Pc-aZd"/>
+                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9d-rm-TE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,9 @@
 		776902771B681977002357FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776902761B681977002357FF /* Images.xcassets */; };
 		7769027A1B681977002357FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 776902781B681977002357FF /* LaunchScreen.xib */; };
 		776902901B681FA2002357FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769028F1B681FA2002357FF /* MapViewController.swift */; };
+		776BA1F81BF5C94F00511BD7 /* BarActivityIndicatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776BA1F71BF5C94F00511BD7 /* BarActivityIndicatorItem.swift */; };
+		776BA1FB1BF5E3D300511BD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776BA1FA1BF5E3D300511BD7 /* Constants.swift */; };
+		776BA1FD1BF5E53300511BD7 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776BA1FC1BF5E53300511BD7 /* NSObject.swift */; };
 		777095B81BDECBF800D78D79 /* NSSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777095B71BDECBF800D78D79 /* NSSet.swift */; };
 		77C24A851BB9C10900F586B6 /* MKCoordinateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C24A841BB9C10900F586B6 /* MKCoordinateRegion.swift */; };
 		77E21D3D1BAFE485001B36ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E21D3C1BAFE485001B36ED /* MapKit.framework */; };
@@ -84,6 +87,9 @@
 		776902761B681977002357FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		776902791B681977002357FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7769028F1B681FA2002357FF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "musicurious-ios/MapViewController.swift"; sourceTree = "<group>"; };
+		776BA1F71BF5C94F00511BD7 /* BarActivityIndicatorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarActivityIndicatorItem.swift; sourceTree = "<group>"; };
+		776BA1FA1BF5E3D300511BD7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		776BA1FC1BF5E53300511BD7 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		777095B71BDECBF800D78D79 /* NSSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSet.swift; sourceTree = "<group>"; };
 		77C24A841BB9C10900F586B6 /* MKCoordinateRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegion.swift; sourceTree = "<group>"; };
 		77E21D3C1BAFE485001B36ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7769026F1B681977002357FF /* AppDelegate.swift */,
+				776BA1FA1BF5E3D300511BD7 /* Constants.swift */,
 				77E21D3F1BAFEE84001B36ED /* Model */,
 				77E21D401BAFEE94001B36ED /* View */,
 				77E21D411BAFEE99001B36ED /* Controller */,
@@ -172,6 +179,7 @@
 			children = (
 				776902731B681977002357FF /* Main.storyboard */,
 				776902781B681977002357FF /* LaunchScreen.xib */,
+				776BA1F71BF5C94F00511BD7 /* BarActivityIndicatorItem.swift */,
 			);
 			name = View;
 			path = ..;
@@ -216,6 +224,7 @@
 				773ACEEE1BDD8D6E0066DD48 /* NSNumber.swift */,
 				777095B71BDECBF800D78D79 /* NSSet.swift */,
 				772963E71BF345D2002A9889 /* String.swift */,
+				776BA1FC1BF5E53300511BD7 /* NSObject.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -393,8 +402,11 @@
 				77E21D6C1BB03548001B36ED /* Musicurious.xcdatamodeld in Sources */,
 				776902721B681977002357FF /* ViewController.swift in Sources */,
 				7735061B1BB1FB290074B258 /* CountryViewController.swift in Sources */,
+				776BA1F81BF5C94F00511BD7 /* BarActivityIndicatorItem.swift in Sources */,
 				773ACEEC1BDD651E0066DD48 /* Playlist+CoreDataProperties.swift in Sources */,
+				776BA1FB1BF5E3D300511BD7 /* Constants.swift in Sources */,
 				772963E81BF345D2002A9889 /* String.swift in Sources */,
+				776BA1FD1BF5E53300511BD7 /* NSObject.swift in Sources */,
 				776902701B681977002357FF /* AppDelegate.swift in Sources */,
 				77E21D671BB01E27001B36ED /* CoreDataStackManager.swift in Sources */,
 			);

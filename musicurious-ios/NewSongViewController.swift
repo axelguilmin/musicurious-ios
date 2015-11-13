@@ -66,7 +66,7 @@ class NewSongViewController : ViewController, UITextFieldDelegate {
 			let alert = UIAlertController(title: "", message: "Title is required", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
 			self.presentViewController(alert, animated: true, completion: nil)
-			return;
+			return
 		}
 		
 		// artist is optional
@@ -97,16 +97,19 @@ class NewSongViewController : ViewController, UITextFieldDelegate {
 			let alert = UIAlertController(title: "", message: "Youtube link is required", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
 			self.presentViewController(alert, animated: true, completion: nil)
-			return;
+			return
 		}
 		
 		// Add the song in the playlist
 		let newSong = Song(info, context: sharedContext)
 		newSong.playlist = playlist
-		playlist.addSong(newSong)
-	
+		
 		// Close
-		self.dismissViewControllerAnimated(true, completion: nil)
+		self.dismissViewControllerAnimated(true, completion: {
+			// Update playlist on the server
+			// In the completion block so the notifications are sent after the `CountryViewController` appeared
+			self.playlist.addSong(newSong)
+		})
 	}
 	
 	// MARK: - Keyboard

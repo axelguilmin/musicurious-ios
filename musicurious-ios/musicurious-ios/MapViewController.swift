@@ -34,6 +34,7 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 	// MARK: - Outlet
 	
 	@IBOutlet weak var mapView: MKMapView!
+	@IBOutlet weak var activityIndicator: BarActivityIndicatorItem!
 	
 	// MARK: - Lifecycle
 	
@@ -56,6 +57,8 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 		mapView.addGestureRecognizer(addTapGestureRecognzier);
 		
 		// Load the playlist from server
+		self.observeNotification(selector: "loadPlaylistBegin", name: Notification.Playlist.LoadPlaylist.begin)
+		self.observeNotification(selector: "loadPlaylistDone", name: Notification.Playlist.LoadPlaylist.done)
 		Playlist.loadPlaylistWithId(1)
 	}
 	
@@ -72,6 +75,20 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 		fetchedResultsController.delegate = nil
 	}
 	
+	// MARK: - Notification
+	
+	func loadPlaylistBegin() {
+		dispatch_async(dispatch_get_main_queue()) {
+			self.activityIndicator.startAnimating()
+		}
+	}
+	
+	func loadPlaylistDone() {
+		dispatch_async(dispatch_get_main_queue()) {
+			self.activityIndicator.stopAnimating()
+		}
+	}
+	
 	// MARK: - func
 	
 	func handleTap(gestureRecognizer:UIGestureRecognizer) {
@@ -80,8 +97,32 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 		let location = CLLocation(latitude: touchMapCoordinate.latitude, longitude: touchMapCoordinate.longitude)
 		
 		let geocoder = CLGeocoder()
+		activityIndicator.startAnimating()
 		geocoder.reverseGeocodeLocation(location) { place, error in
-			if error != nil { return }
+			self.activityIndicator.stopAnimating()
+
+			if error != nil {
+				var message = error?.description
+				switch (CLError(rawValue:error!.code)!) {
+				case .LocationUnknown:
+					message = "This country is unknown"
+					break
+				case .Denied:
+					message = "An error occured, please try again"
+					break
+				case .Network:
+					message = "No internet connexion"
+					break
+				default:
+					// Display the error description as a message
+					break
+				}
+				
+				let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+				self.presentViewController(alert, animated: true, completion: nil)
+				return
+			}
 			
 			if let countryCode = place!.first!.ISOcountryCode {
 				self.countryCode = countryCode

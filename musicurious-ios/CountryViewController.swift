@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CountryViewController : UIPageViewController, UIPageViewControllerDataSource, NSFetchedResultsControllerDelegate {
+class CountryViewController : UIPageViewController, UIPageViewControllerDataSource {
 	
 	// MARK: - var
 	
@@ -26,7 +26,11 @@ class CountryViewController : UIPageViewController, UIPageViewControllerDataSour
 			}
 		}
 	}
+	
+	// MARK: - IBOutlet
 
+	@IBOutlet weak var activityIndicator: BarActivityIndicatorItem!
+	
 	// MARK: - Lifecycle
 	
 	override func viewDidLoad() {
@@ -38,16 +42,18 @@ class CountryViewController : UIPageViewController, UIPageViewControllerDataSour
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		fetchedResultsController.delegate = self
 		try! fetchedResultsController.performFetch()
-		
 		self.setViewControllers([viewControllerForSong(songs.first!)], direction: .Forward, animated: true, completion: nil)
+		
+		observeNotification(selector: "addSongBegin", name: Notification.Playlist.AddSong.begin)
+		observeNotification(selector: "addSongDone", name: Notification.Playlist.AddSong.done)
+		observeNotification(selector: "addSongError", name: Notification.Playlist.AddSong.error)
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
-		
-		fetchedResultsController.delegate = nil
+				
+		stopObservingNotifications()
 	}
 	
 	// MARK: - func
@@ -91,6 +97,29 @@ class CountryViewController : UIPageViewController, UIPageViewControllerDataSour
 		self.presentViewController(newSongVC, animated: true, completion: nil)
 	}
 	
+	// MARK: - Notification
+	
+	func addSongBegin() {
+		dispatch_async(dispatch_get_main_queue()) {
+			self.activityIndicator.startAnimating()
+		}
+	}
+	
+	func addSongDone() {
+		dispatch_async(dispatch_get_main_queue()) {
+			self.activityIndicator.stopAnimating()
+		}
+	}
+	
+	func addSongError() {
+		dispatch_async(dispatch_get_main_queue()) {
+			let alert = UIAlertController(title: "Error", message: "A connexion error happened while adding the song", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+			self.presentViewController(alert, animated: true, completion: nil)
+			self.activityIndicator.stopAnimating()
+		}
+	}
+	
 	// MARK: - Fetched Results Controller
 	
 	lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -106,10 +135,4 @@ class CountryViewController : UIPageViewController, UIPageViewControllerDataSour
 		
 		return fetchedResultsController
 	}()
-	
-	// MARK: - Fetched Results Controller Delegate
-	
-	func controllerDidChangeContent(controller: NSFetchedResultsController) {
-		self.setViewControllers([viewControllerForSong(songs.last!)], direction: .Reverse, animated: true, completion: nil)
-	}
 }

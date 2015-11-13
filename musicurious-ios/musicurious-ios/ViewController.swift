@@ -9,27 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-	// MARK: - var
-	
-	var notificationCenter:NSNotificationCenter {
-		return NSNotificationCenter.defaultCenter()
-	}
 	
 	// MARK: - Lifecyle
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		notificationCenter.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-		notificationCenter.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+		observeNotification(selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification)
+		observeNotification(selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification)
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
-		
-		notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-		notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+
+		stopObservingNotification(UIKeyboardWillShowNotification)
+		stopObservingNotification(UIKeyboardWillHideNotification)
+	}
+	
+	deinit {
+		stopObservingNotifications()
 	}
 	
 	// MARK: - func

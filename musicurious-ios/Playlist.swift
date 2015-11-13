@@ -60,10 +60,12 @@ class Playlist: NSManagedObject {
 			let playlist = result.count > 0 ? result.first! : Playlist(context: sharedContext)
 			playlist.updateWithInfo(json as! [String:AnyObject] , context: sharedContext)
 			CoreDataStackManager.sharedInstance().saveContext()
+			playlist.postNotification(Notification.Playlist.LoadPlaylist.done)
 			}, failure: {
 				// Try again
 				loadPlaylistWithId(id)
 		})
+		Playlist.postNotification(Notification.Playlist.LoadPlaylist.begin)
 	}
 	
 	func addSong(song:Song) {
@@ -71,9 +73,11 @@ class Playlist: NSManagedObject {
 			success: {HTTPCode, json in
 				self.updateWithInfo(json as! [String:AnyObject] , context: sharedContext)
 				CoreDataStackManager.sharedInstance().saveContext()
+				self.postNotification(Notification.Playlist.AddSong.done)
 			},
 			failure: {
-				print("Error while adding a song")
+				self.postNotification(Notification.Playlist.AddSong.error)
 		})
+		self.postNotification(Notification.Playlist.AddSong.begin)
 	}
 }

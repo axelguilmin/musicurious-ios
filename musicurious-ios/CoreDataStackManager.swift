@@ -77,7 +77,7 @@ class CoreDataStackManager {
 			
 			dispatch_async(dispatch_get_main_queue()) {
 				if !context.hasChanges {
-					return;
+					return
 				}
 				
 				do {
