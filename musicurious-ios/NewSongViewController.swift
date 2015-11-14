@@ -117,7 +117,7 @@ class NewSongViewController : ViewController, UITextFieldDelegate {
 		// Add the song in the playlist
 		let newSong = Song(info, context: sharedContext)
 		newSong.playlist = playlist
-		self.playlist.addSong(newSong)
+		playlist.addSong(newSong)
 	}
 	
 	// MARK: - Keyboard

@@ -51,6 +51,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="QEz-a7-dCE" id="31j-5x-pdI"/>
                         <outlet property="mapView" destination="FYe-QH-xg6" id="3KJ-jI-jR1"/>
+                        <outlet property="randomButton" destination="GKF-hv-02G" id="dD7-z5-elf"/>
                         <segue destination="z8n-Nf-to0" kind="show" identifier="showSong" id="HHj-GT-ORL"/>
                     </connections>
                 </viewController>

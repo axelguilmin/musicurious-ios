@@ -35,12 +35,15 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 	
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var activityIndicator: BarActivityIndicatorItem!
+	@IBOutlet weak var randomButton: UIBarButtonItem!
 	
 	// MARK: - Lifecycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		mapView.delegate = self
+		// Disable the button until the playlist is loaded
+		randomButton.enabled = false
 		
 		// Reload map position
 		let userDefault = NSUserDefaults.standardUserDefaults()
@@ -184,22 +187,15 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 	// MARK: - Fetched Results Controller Delegate
 	
 	func controllerDidChangeContent(controller: NSFetchedResultsController) {
-		self.title = self.playlist!.name
+		title = playlist!.name
+		randomButton.enabled = true
 	}
 	
 	// MARK: - IBAction
 	
 	@IBAction func randomCountry(sender: AnyObject) {
-		if let playlist = self.playlist,
-			song = playlist.songs.randomObject() as? Song {
-		
-				self.countryCode = song.countryCode
-				self.performSegueWithIdentifier("showSong", sender: self)
-		}
-	}
-	
-	@IBAction func newSongAction() {
-		let newSongVC = self.storyboard!.instantiateViewControllerWithIdentifier("NewSongViewController")
-		self.presentViewController(newSongVC, animated: true, completion: nil)
+		let song = playlist!.songs.randomObject() as! Song
+		countryCode = song.countryCode
+		performSegueWithIdentifier("showSong", sender: self)
 	}
 }
