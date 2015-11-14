@@ -145,7 +145,6 @@ class NewSongViewController : ViewController, UITextFieldDelegate {
 	override func keyboardWillHide(notification: NSNotification) {
 		// Load the video
 		if let youtubeId = Song.youtubeIdWithURL(youtubeLink.text!) {
-			print(youtubeId)
 			playerView.loadVideoID(youtubeId)
 		}
 	}

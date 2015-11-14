@@ -126,7 +126,6 @@ class MapViewController : ViewController, MKMapViewDelegate, NSFetchedResultsCon
 			
 			if let countryCode = place!.first!.ISOcountryCode {
 				self.countryCode = countryCode
-				print("Selected \(self.countryCode) - \(Song.countryWithCountryCode(self.countryCode)!)")
 			}
 			else { return }
 			

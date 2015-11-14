@@ -77,10 +77,10 @@ class CountryViewController : UIPageViewController, UIPageViewControllerDataSour
 	// MARK: - IBAction
 	
 	@IBAction func newSongAction() {
-		let newSongVC = self.storyboard!.instantiateViewControllerWithIdentifier("NewSongViewController") as! NewSongViewController
+		let newSongVC = storyboard!.instantiateViewControllerWithIdentifier("NewSongViewController") as! NewSongViewController
 		newSongVC.countryCode = self.countryCode
 		newSongVC.playlist = self.playlist
-		self.presentViewController(newSongVC, animated: true, completion: nil)
+		presentViewController(newSongVC, animated: true, completion: nil)
 	}
 	
 	// MARK: - Fetched Results Controller
