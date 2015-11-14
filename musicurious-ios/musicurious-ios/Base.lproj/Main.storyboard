@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Map-->
@@ -80,6 +79,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="FPk-Hw-qpC"/>
+                                    <barButtonItem id="BPK-Ft-31G" customClass="BarActivityIndicatorItem" customModule="Musicurious" customModuleProvider="target"/>
                                     <barButtonItem systemItem="done" id="wgO-DH-ODC">
                                         <connections>
                                             <action selector="done" destination="8l2-ML-Jte" id="pzw-H7-Vtu"/>
@@ -208,7 +208,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="BPK-Ft-31G" id="u7r-Qk-hKA"/>
                         <outlet property="artist" destination="MAR-dH-5Gd" id="tMi-bi-He7"/>
+                        <outlet property="cancelButton" destination="uiN-fY-Feo" id="7Ry-2Z-pLH"/>
+                        <outlet property="doneButton" destination="wgO-DH-ODC" id="CML-q4-QVe"/>
                         <outlet property="playerView" destination="34g-1G-G9a" id="dy2-Ut-1nz"/>
                         <outlet property="songTitle" destination="x56-la-akv" id="H8p-HO-vOi"/>
                         <outlet property="titleLabel" destination="lQH-Se-vO6" id="mit-ZM-iEv"/>
@@ -273,19 +276,13 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="z8n-Nf-to0" customClass="CountryViewController" customModule="Musicurious" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Country name" id="ovf-Zj-2X1">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="dl8-Ka-WOY">
-                                <connections>
-                                    <action selector="newSongAction" destination="z8n-Nf-to0" id="LEs-on-Zey"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem id="fFL-34-Anp" customClass="BarActivityIndicatorItem" customModule="Musicurious" customModuleProvider="target"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dl8-Ka-WOY">
+                            <connections>
+                                <action selector="newSongAction" destination="z8n-Nf-to0" id="LEs-on-Zey"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="fFL-34-Anp" id="e58-Pc-aZd"/>
-                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9d-rm-TE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
